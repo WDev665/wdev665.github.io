@@ -16,7 +16,7 @@ $('.password-status').on('click', function(){
 let startPageBackground = document.querySelector('.start-page-background');
 function fadeOut(){
     startPageBackground.style.opacity = 1;
-
+    /*
     (function fade() {
         if ((startPageBackground.style.opacity -= .05) < 0) {
             startPageBackground.style.display = "none";
@@ -24,6 +24,8 @@ function fadeOut(){
             requestAnimationFrame(fade);
         }
     })();
+    */
+    $('.start-page-background').fadeOut(2000);
 }
 function textMovement(){
     $('h1').animate({
