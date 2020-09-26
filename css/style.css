@@ -14,8 +14,8 @@ body {
 
 /*Стилі форми*/
 .login-form{
-    height: 350px;
-    width: 450px;
+    height: 260px;
+    width: 300px;
     background-color: #fff;
     border-radius: 25px;
     box-shadow: 0 0 20px -5px rgba(99,99,99,1);
@@ -37,5 +37,66 @@ body {
 }
 .login-form-top h2{
     margin-top: 10px;
+}
+.login-form-content{
+    margin-top: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-form-content form{
+    margin-top: 30px;
+}
+.login-form-content label{
+    width: 190px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.login-form-content input{
+    height: 25px;
+    padding: 0;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #0071c5;
+}
+.login-form-content .input-status {
+    display: block;
+    height: 25px;
+    width: 25px;
+    border-bottom: 1px solid #0071c5;
+}
+.login-form-content .login-status{
+    background-image: url(../img/login-icon.png);
+    background-size: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.login-form-content .password-status{
+    background-image: url(../img/pass-icon.png);
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.login-form-content .password-status:hover{
+    cursor: pointer;
+    background-image: url(../img/pass-icon-h.png);
+}
+.login-form-content button{
+    width: 100%;
+    background-color: transparent;
+    color: #0071c5;
+    height: 30px;
+    outline: none;
+    border-radius: 15px;
+    border: 1.3px solid #0071c5;
+    transition: .3s;
+}
+.login-form-content button:hover{
+    cursor: pointer;
+    color: #fff;
+    background-color: #0071c5;
+    transition: .3s;
 }
 /*Стилі форми (кінець)*/
