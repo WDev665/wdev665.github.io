@@ -38,3 +38,7 @@ setTimeout(function () {
 },4500);
 setTimeout(textMovement,3000);
 setTimeout(fadeOut, 3000);
+
+$(document).ready(function () {
+
+})
