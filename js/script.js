@@ -41,5 +41,5 @@ setTimeout(fadeOut, 3000);
 
 /*Авторизація*/
 $.getJSON("db/users.json", function(json) {
-    console.log(json);
+    console.log(json); //туть
 });
