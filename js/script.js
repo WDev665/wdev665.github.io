@@ -29,8 +29,8 @@ function fadeOut(){
 }
 function textMovement(){
     $('h1').animate({
-        top: '15%',
-        fontSize: '4em'
+        top: '19%',
+        fontSize: '3em'
     },1500);
 }
 setTimeout(function () {
