@@ -40,6 +40,10 @@ setTimeout(textMovement,3000);
 setTimeout(fadeOut, 3000);
 
 /*Авторизація*/
-$.getJSON("db/users.json", function(json) {
-    console.log(json); //туть
+$(document).ready(function () {
+    $('#sign-in').on('click', function () {
+        $.getJSON("db/users.json", function(json) {
+            console.log(json); //туть
+        });
+    });
 });
