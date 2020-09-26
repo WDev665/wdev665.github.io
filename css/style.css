@@ -9,7 +9,28 @@ body {
     background-color: rgb(240, 240, 240); /* <-- Змінити на фон */
 }
 /*Стилі лого і фона*/
-
+.start-page{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+}
+.start-page-background{
+    position: relative;
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    background: white;
+}
+h1{
+    position: relative;
+    top: 30%;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 6em;
+    color: #0071c5;
+    z-index: 6;
+}
 /*Стилі лого і фона (кінець)*/
 
 /*Стилі форми*/
