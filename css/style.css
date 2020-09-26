@@ -1,3 +1,7 @@
+/*
+    font-family: 'Montserrat', sans-serif;
+ */
+
 /*Олег встав bg на body*/
 body {
     padding: 0;
@@ -14,13 +18,24 @@ body {
     width: 450px;
     background-color: #fff;
     border-radius: 25px;
-    box-shadow: 0px 0px 20px -5px rgba(99,99,99,1);
+    box-shadow: 0 0 20px -5px rgba(99,99,99,1);
 
     position: absolute;
     top: 50%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
-
+}
+.login-form-top{
+    padding-top: 0;
+    border-bottom: 2px solid #0071c5;
+    height: 35px;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    color: #0071c5;
+    text-align: center;
+}
+.login-form-top h2{
+    margin-top: 10px;
 }
 /*Стилі форми (кінець)*/
