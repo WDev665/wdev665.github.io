@@ -1,0 +1,29 @@
+{
+  "users": [
+    {
+      "userID": "01",
+      "userName": "admin",
+      "userPassword": "1111"
+    },
+    {
+      "userID": "02",
+      "userName": "moderator1",
+      "userPassword": "mod1"
+    },
+    {
+      "userID": "03",
+      "userName": "moderator2",
+      "userPassword": "mod1"
+    },
+    {
+      "userID": "02",
+      "userName": "worker1",
+      "userPassword": "work1"
+    },
+    {
+      "userID": "03",
+      "userName": "worker2",
+      "userPassword": "work2"
+    }
+  ]
+}
