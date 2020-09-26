@@ -1,5 +1,7 @@
 /*Олег встав bg на body*/
 body {
+    padding: 0;
+    margin: 0;
     background-color: rgb(240, 240, 240); /* <-- Змінити на фон */
 }
 /*Стилі лого і фона*/
@@ -10,5 +12,6 @@ body {
 .login-form{
     height: 400px;
     width: 500px;
+    background-color: #fff;
 }
 /*Стилі форми (кінець)*/
