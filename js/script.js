@@ -18,7 +18,7 @@ function fadeOut(){
     startPageBackground.style.opacity = 1;
 
     (function fade() {
-        if ((startPageBackground.style.opacity -= .1) < 0) {
+        if ((startPageBackground.style.opacity -= .05) < 0) {
             startPageBackground.style.display = "none";
         } else {
             requestAnimationFrame(fade);
