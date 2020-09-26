@@ -10,8 +10,17 @@ body {
 
 /*Стилі форми*/
 .login-form{
-    height: 400px;
-    width: 500px;
+    height: 350px;
+    width: 450px;
     background-color: #fff;
+    border-radius: 25px;
+    box-shadow: 0px 0px 20px -5px rgba(99,99,99,1);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+
 }
 /*Стилі форми (кінець)*/
