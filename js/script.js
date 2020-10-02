@@ -96,7 +96,7 @@ function authorizing(){
 }
 
 /*Функція зворотньої анімації*/
-
+/*
 $(document).ready(function () {
     function reverseTextMovement(){
         $('h1').animate({
@@ -111,3 +111,4 @@ $(document).ready(function () {
    });
 });
 // кінець функції зворотньої анімації
+ */
