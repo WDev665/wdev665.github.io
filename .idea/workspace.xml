@@ -19,13 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96a83103-ff06-457f-b462-5d7facd09362" name="Default Changelist" comment="preloader">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/wdev665.github.io.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/script.js" afterDir="false" />
+    <list default="true" id="96a83103-ff06-457f-b462-5d7facd09362" name="Default Changelist" comment="json parse">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +69,9 @@
       <updated>1601054512823</updated>
       <workItem from="1601054514056" duration="2824000" />
       <workItem from="1601057992702" duration="2362000" />
-      <workItem from="1601132217676" duration="10819000" />
+      <workItem from="1601132217676" duration="11104000" />
+      <workItem from="1601316394474" duration="15000" />
+      <workItem from="1601655973081" duration="34000" />
     </task>
     <task id="LOCAL-00001" summary="new">
       <created>1601054669453</created>
@@ -334,7 +332,35 @@
       <option name="project" value="LOCAL" />
       <updated>1601143499821</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="json parse">
+      <created>1601146454295</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1601146454296</updated>
+    </task>
+    <task id="LOCAL-00039" summary="json parse">
+      <created>1601146502086</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1601146502086</updated>
+    </task>
+    <task id="LOCAL-00040" summary="json parse">
+      <created>1601146520899</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1601146520899</updated>
+    </task>
+    <task id="LOCAL-00041" summary="json parse">
+      <created>1601146569225</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1601146569225</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,7 +399,8 @@
     <MESSAGE value="bg" />
     <MESSAGE value="favicon" />
     <MESSAGE value="preloader" />
-    <option name="LAST_COMMIT_MESSAGE" value="preloader" />
+    <MESSAGE value="json parse" />
+    <option name="LAST_COMMIT_MESSAGE" value="json parse" />
   </component>
   <component name="WindowStateProjectService">
     <state x="383" y="9" key="CommitChangelistDialog2" timestamp="1601059926153">
@@ -396,10 +423,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="555" y="137" key="Github.UntrackedFilesDialog/0.0.1536.864@0.0.1536.864" timestamp="1601054546473" />
-    <state x="407" y="193" key="MultipleFileMergeDialog" timestamp="1601136211093">
+    <state x="585" y="190" key="MultipleFileMergeDialog" timestamp="1601146474333">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="407" y="193" key="MultipleFileMergeDialog/0.0.1536.864@0.0.1536.864" timestamp="1601136211093" />
+    <state x="585" y="190" key="MultipleFileMergeDialog/0.0.1536.864@0.0.1536.864" timestamp="1601146474333" />
     <state x="538" y="134" key="RollbackChangesDialog" timestamp="1601137471241">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -408,10 +435,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="277" y="77" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1601055208676" />
-    <state x="361" y="165" key="Vcs.Push.Dialog.v2" timestamp="1601143503149">
+    <state x="361" y="165" key="Vcs.Push.Dialog.v2" timestamp="1601146589176">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1601143503149" />
+    <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1601146589176" />
     <state x="579" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601145546825">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

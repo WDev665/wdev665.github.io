@@ -43,3 +43,5 @@ setTimeout(fadeOut, 3000);
 $.getJSON("db/users.json", function(json) {
     console.log(json); //туть
 });
+
+/*Функція зворотньої анімації*/
