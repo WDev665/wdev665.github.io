@@ -96,3 +96,18 @@ function authorizing(){
 }
 
 /*Функція зворотньої анімації*/
+
+$(document).ready(function () {
+    function reverseTextMovement(){
+        $('h1').animate({
+            top: '30%',
+            fontSize: '6em'
+        },1500);
+    }
+   $('#sign-in').on('click',function () {
+       document.querySelector('.start-page').style.zIndex = 5;
+       $('.start-page-background').fadeIn(2000);
+       reverseTextMovement();
+   });
+});
+// кінець функції зворотньої анімації
