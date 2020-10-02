@@ -90,7 +90,7 @@ function authorizing(){
     }
 
     if(!userFounded){
-        console.log('unavailableUser');
+        console.log('unavailableUser!');
         $('.login-status').css('background-image', 'url(img/login-icon-denied.png)');
     }
 }
