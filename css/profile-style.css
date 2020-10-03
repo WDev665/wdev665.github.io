@@ -79,6 +79,7 @@ section{
     width: 10%;
     float: right;
     transition: 0.5s;
+    cursor: pointer;
 }
 .logout{
     color: orangered;
@@ -88,7 +89,6 @@ section{
     margin-right: -50%;
     transform: translate(-50%, -50%);
     letter-spacing: 2px;
-    cursor: pointer;
     transition: 0.5s;
 }
 .exit:hover{
