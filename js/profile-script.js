@@ -11,8 +11,10 @@ function fadeOut(){
     })();
     */
     $('.start-page-background').fadeOut(2000);
+    $('.fade').fadeOut(2000);
+    $('.start-page').fadeOut(2000);
 }
-function textMovement(){
+function textMovement() {
     $('h1').fadeOut(2000);
 }
 setTimeout(function () {
