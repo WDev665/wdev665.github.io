@@ -3,27 +3,57 @@
     {
       "userID": "01",
       "userName": "admin",
-      "userPassword": "1111"
+      "userPassword": "1111",
+      "userPosition": "Director",
+      "userDepartment": "Main",
+      "userCurrentStatus": "off-duty",
+      "userStatus": "off-duty",
+      "userBet": "",
+      "userSalary": ""
     },
     {
       "userID": "02",
       "userName": "moderator1",
-      "userPassword": "mod1"
+      "userPassword": "mod1",
+      "userPosition": "Moderator",
+      "userDepartment": "Admin",
+      "userCurrentStatus": "off-duty",
+      "userStatus": "off-duty",
+      "userBet": "",
+      "userSalary": ""
     },
     {
       "userID": "03",
       "userName": "moderator2",
-      "userPassword": "mod1"
+      "userPassword": "mod1",
+      "userPosition": "Moderator",
+      "userDepartment": "Admin",
+      "userCurrentStatus": "off-duty",
+      "userStatus": "off-duty",
+      "userBet": "",
+      "userSalary": ""
     },
     {
       "userID": "02",
       "userName": "worker1",
-      "userPassword": "work1"
+      "userPassword": "work1",
+      "userPosition": "Programmer",
+      "userDepartment": "Juniour",
+      "userCurrentStatus": "off-duty",
+      "userStatus": "off-duty",
+      "userBet": "",
+      "userSalary": ""
     },
     {
       "userID": "03",
       "userName": "worker2",
-      "userPassword": "work2"
+      "userPassword": "work2",
+      "userPosition": "Programmer",
+      "userDepartment": "Middle",
+      "userCurrentStatus": "off-duty",
+      "userStatus": "off-duty",
+      "userBet": "",
+      "userSalary": ""
     }
   ]
 }
