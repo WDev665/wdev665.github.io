@@ -85,7 +85,7 @@ function authorizing(){
                 rememberMe(login, pass);
             }
             setTimeout(exit, 500);
-            setTimeout(signIn, 5500);
+            setTimeout(signIn, 2200);
             console.log('userAllowed');
 
             $('.login-status').css('background-image', 'url(img/login-icon-allowed.png)');
