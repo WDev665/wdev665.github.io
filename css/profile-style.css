@@ -64,6 +64,7 @@ section{
     transform: translate(-50%, -50%);
 }
 .logo{
+    color: #0071c5;
     position: absolute;
     top: 15%;
     left: 50%;
