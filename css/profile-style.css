@@ -11,7 +11,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 5;
+    z-index: 10;
 }
 .start-page-background{
     position: relative;
@@ -28,6 +28,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: 5;
 }
 .start-page-logo{
     position: relative;
@@ -60,7 +61,7 @@ section{
 .status{
     position: absolute;
     top: 50%;
-    left: calc(30px + 2%);
+    left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
 }
@@ -72,7 +73,7 @@ section{
     margin-right: -50%;
     transform: translate(-50%, -50%);
 }
-.exit{
+.exit,.status-container{
     position: relative;
     height: 100%;
     margin: 0;
@@ -80,6 +81,10 @@ section{
     float: right;
     transition: 0.5s;
     cursor: pointer;
+}
+.status-container{
+    float: left;
+    cursor: default;
 }
 .logout{
     color: orangered;
