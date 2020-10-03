@@ -46,13 +46,25 @@ let users;
 let userId;
 let userFounded = false;
 let userAllowed = false;
+let isButtonPressed = false;
+
+checkMe();
 
 $.getJSON("db/users.json", function(json) {
     console.log(json);
     users = json.users;
 });
 
+
+
 function authorizing(){
+    if(isButtonPressed){
+        console.log('false');
+    }else{
+        isButtonPressed = true;
+        $('#sign-in').attr('class','innactive');
+    }
+
     let login = $('input[name="login"]').val();
     let pass = $('input[name="password"]').val();
 
@@ -69,6 +81,11 @@ function authorizing(){
     function checkPass(id, pass){
         if(users[id]['userPassword'] === pass){
             userAllowed = true;
+            if($('input[name="remember_me"]').is(':checked')){
+                rememberMe(login, pass);
+            }
+            setTimeout(exit, 500);
+            setTimeout(signIn, 5500);
             console.log('userAllowed');
 
             $('.login-status').css('background-image', 'url(img/login-icon-allowed.png)');
@@ -92,23 +109,73 @@ function authorizing(){
     if(!userFounded){
         console.log('unavailableUser!');
         $('.login-status').css('background-image', 'url(img/login-icon-denied.png)');
+        isButtonPressed = false;
+        $('#sign-in').attr('class','');
     }
 }
 
-/*Функція зворотньої анімації*/
-/*
-$(document).ready(function () {
-    function reverseTextMovement(){
-        $('h1').animate({
-            top: '30%',
-            fontSize: '6em'
-        },1500);
+/*Cookies functions*/
+function setCookie(name,value,days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
     }
-   $('#sign-in').on('click',function () {
-       document.querySelector('.start-page').style.zIndex = 5;
-       $('.start-page-background').fadeIn(2000);
-       reverseTextMovement();
-   });
-});
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+}
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+function eraseCookie(name) {
+    document.cookie = name+'=; Max-Age=-99999999;';
+}
+
+function checkMe(){
+    let remembered_login = getCookie('login');
+    let remembered_password = getCookie('password');
+
+    if(remembered_login !== null){
+        signIn();
+    }
+
+    console.log('yes')
+}
+
+function rememberMe(log, pass){
+    let login = log;
+    let password = pass;
+
+    setCookie('login', login, 999);
+    setCookie('password', password, 999);
+    console.log('yes2')
+}
+
+function signIn(){
+    window.location.replace('profile.html');
+}
+
+
+/*Функція зворотньої анімації*/
+function reverseTextMovement(){
+    $('h1').animate({
+        top: '30%',
+        fontSize: '6em'
+    },1500);
+}
+
+function exit(){
+    document.querySelector('.start-page').style.zIndex = 5;
+    $('.start-page-background').fadeIn(2000);
+    reverseTextMovement();
+}
+
 // кінець функції зворотньої анімації
- */
+ 

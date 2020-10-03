@@ -45,7 +45,7 @@ h1{
 
 /*Стилі форми*/
 .login-form{
-    height: 260px;
+    height: 270px;
     width: 300px;
     background-color: #fff;
     border-radius: 25px;
@@ -80,6 +80,7 @@ h1{
     margin-top: 30px;
 }
 .login-form-content label{
+    position: relative;
     width: 190px;
     display: flex;
     flex-direction: row;
@@ -115,6 +116,7 @@ h1{
     background-image: url(../img/pass-icon-h.png);
 }
 .login-form-content button{
+    padding-top: 3px;
     width: 100%;
     background-color: transparent;
     color: #0071c5;
@@ -123,11 +125,34 @@ h1{
     border-radius: 15px;
     border: 1.3px solid #0071c5;
     transition: .3s;
+    z-index: 1;
 }
 .login-form-content button:hover{
     cursor: pointer;
     color: #fff;
     background-color: #0071c5;
     transition: .3s;
+}
+.innactive{
+    opacity: 0.5;
+    color: #fff !important;
+    background-color: #0071c5 !important;
+}
+.innactive:hover{
+    cursor: default !important;
+}
+.login-form-content input[type="checkbox"]{
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    margin-right: 10px;
+}
+#remember_me{
+    padding-top: 10px;
+    text-align: left;
+    opacity: 0.8;
+}
+.login-form-content span{
+    font-family: "Segoe UI", sans-serif;
 }
 /*Стилі форми (кінець)*/
