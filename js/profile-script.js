@@ -1,4 +1,4 @@
-let startPageBackground = document.querySelector('.start-page-background');
+/*let startPageBackground = document.querySelector('.start-page-background');
 function fadeOut(){
     startPageBackground.style.opacity = 1;
     /*
@@ -9,7 +9,7 @@ function fadeOut(){
             requestAnimationFrame(fade);
         }
     })();
-    */
+
     $('.start-page-background').fadeOut(2000);
     $('.fade').fadeOut(2000);
     $('.start-page').fadeOut(2000);
@@ -22,3 +22,4 @@ setTimeout(function () {
 },4500);
 setTimeout(textMovement,3000);
 setTimeout(fadeOut, 3000);
+*/
