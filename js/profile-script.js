@@ -22,3 +22,8 @@ setTimeout(function () {
 },4500);
 setTimeout(textMovement,3000);
 setTimeout(fadeOut, 3000);
+
+let dropdownTaskbar = document.querySelector('.taskbar');
+$('.dropdown').on('click', function () {
+    $('.taskbar').toggleClass('closed opened');
+})
