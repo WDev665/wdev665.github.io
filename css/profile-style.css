@@ -71,3 +71,17 @@ section{
     margin-right: -50%;
     transform: translate(-50%, -50%);
 }
+.logout{
+    color: orangered;
+    position: absolute;
+    top: 50%;
+    left: calc(98% - 30px);
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    letter-spacing: 2px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.logout:hover{
+    opacity: 0.7;
+}
