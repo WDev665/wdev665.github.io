@@ -148,14 +148,9 @@ function rememberMeTemporarily(log, pass){
 }
 
 function checkMe(){
-    let remembered_login = getCookie('login');
-    let remembered_password = getCookie('password');
-
-    if(remembered_login !== null){
+    if(getCookie('login') !== null || sessionStorage.getItem('login') !== null){
         signIn();
     }
-
-    console.log('yes')
 }
 
 function rememberMe(log, pass){
