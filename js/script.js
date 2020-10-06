@@ -83,6 +83,8 @@ function authorizing(){
             userAllowed = true;
             if($('input[name="remember_me"]').is(':checked')){
                 rememberMe(login, pass);
+            }else{
+                rememberMeTemporarily(login, pass);
             }
             setTimeout(exit, 500);
             setTimeout(signIn, 2200);
@@ -138,6 +140,13 @@ function eraseCookie(name) {
     document.cookie = name+'=; Max-Age=-99999999;';
 }
 
+function rememberMeTemporarily(log, pass){
+    let login = log;
+    let password = pass;
+
+    sessionStorage.setItem('login', login);
+}
+
 function checkMe(){
     let remembered_login = getCookie('login');
     let remembered_password = getCookie('password');
@@ -154,7 +163,6 @@ function rememberMe(log, pass){
     let password = pass;
 
     setCookie('login', login, 999);
-    setCookie('password', password, 999);
     console.log('yes2')
 }
 

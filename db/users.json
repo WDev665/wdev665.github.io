@@ -7,7 +7,7 @@
       "userPosition": "Director",
       "userDepartment": "Main",
       "userCurrentStatus": "off-duty",
-      "userStatus": "off-duty",
+      "userStatus": "Out of service",
       "userBet": "",
       "userSalary": ""
     },
@@ -18,7 +18,7 @@
       "userPosition": "Moderator",
       "userDepartment": "Admin",
       "userCurrentStatus": "off-duty",
-      "userStatus": "off-duty",
+      "userStatus": "Out of service",
       "userBet": "",
       "userSalary": ""
     },
@@ -29,7 +29,7 @@
       "userPosition": "Moderator",
       "userDepartment": "Admin",
       "userCurrentStatus": "off-duty",
-      "userStatus": "off-duty",
+      "userStatus": "Out of service",
       "userBet": "",
       "userSalary": ""
     },
@@ -40,7 +40,7 @@
       "userPosition": "Programmer",
       "userDepartment": "Juniour",
       "userCurrentStatus": "off-duty",
-      "userStatus": "off-duty",
+      "userStatus": "Out of service",
       "userBet": "",
       "userSalary": ""
     },
@@ -51,7 +51,7 @@
       "userPosition": "Programmer",
       "userDepartment": "Middle",
       "userCurrentStatus": "off-duty",
-      "userStatus": "off-duty",
+      "userStatus": "Out of service",
       "userBet": "",
       "userSalary": ""
     }
