@@ -137,7 +137,9 @@ function redirect() {
 
     if(getCookie('login') !== null){
         setCookie('login', getCookie('login'), -1);
-        setCookie('password', getCookie('password'), -1);
+    }
+    if(sessionStorage.getItem('login') !== null){
+        sessionStorage.removeItem('login')
     }
 
     window.location.replace('index.html');
