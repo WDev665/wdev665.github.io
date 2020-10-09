@@ -118,24 +118,29 @@ section{
     justify-content: space-around;
     padding: 15px;
     box-sizing: border-box;
-    font-size: 1.6em;
+    font-size: 1em;
 }
-
+.separate-line{
+    height: 100%;
+    width: 0.15%;
+    background: #000;
+}
 .profile-info .work-start{
-    padding: 5px;
+    padding: 15px 30px;
     border: none;
-    font-size: 1.5em;
-    background-color: deepskyblue;
+    font-size: 1em;
+    height: 100%;
+    background-color: lightgreen;
     color: white;
-    font-family: sans-serif;
     border-radius: 15px;
+    font-weight: lighter;
 }
 
 .profile-info .taskbar{
     padding: 0;
     margin: 0;
     width: 40%;
-    height: 70px;
+    height: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -150,16 +155,21 @@ section{
     margin: auto 0;
     position: relative;
     text-align: center;
-    background: deepskyblue;
+    background: darkgrey;
     color: white;
     height: 65px;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+    font-size: 1.15em;
+    transition: 0.5s;
 }
-
+.taskbar .task:first-child{
+    background: darkred;
+}
 .dropdown:hover{
     cursor: pointer;
+    padding-right: 0;
 }
 
 .profile-info .taskbar.closed .task:first-child{
@@ -175,12 +185,32 @@ section{
 }
 
 .profile-info .taskbar.opened{
+    margin: 0;
     align-self: flex-start;
-    height: 250px;
+    height: 300%;
 }
 
 
 .profile-info .taskbar .task span{
     display: block;
     height: 50%;
+}
+
+.dropdown-arrow{
+    height: 100%;
+}
+.task:nth-child(2) .dropdown-arrow, .task:last-child .dropdown-arrow{
+    opacity: 0;
+}
+.taskbar.opened .task:first-child{
+    background: darkred;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.taskbar.opened .task:last-child{
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.taskbar.opened .task:nth-child(2):hover, .taskbar.opened .task:last-child:hover{
+    background: grey;
 }
