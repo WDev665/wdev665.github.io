@@ -144,3 +144,11 @@ function redirect() {
 
     window.location.replace('index.html');
 }
+
+
+// Work Info
+
+let dropdownTaskbar = document.querySelector('.taskbar');
+$('.dropdown').on('click', function () {
+    $('.taskbar').toggleClass('closed opened');
+});
