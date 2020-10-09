@@ -119,6 +119,7 @@ section{
     padding: 15px;
     box-sizing: border-box;
     font-size: 1em;
+    font-family: sans-serif;
 }
 .separate-line{
     height: 100%;
