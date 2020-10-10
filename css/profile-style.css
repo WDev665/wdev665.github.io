@@ -84,6 +84,7 @@ section{
 }
 .status-container{
     float: left;
+    left: 3%;
     cursor: default;
 }
 .logout{
@@ -127,7 +128,7 @@ section{
     background: #000;
 }
 .profile-info .work-start{
-    padding: 15px 30px;
+    padding: 15px 70px;
     border: none;
     font-size: 1em;
     height: 100%;
