@@ -189,5 +189,5 @@ function timer(){
     }
 }
 $('.work-start').on('click',function () {
-    setInterval(timer,1);
+    setInterval(timer,1000);
 });
