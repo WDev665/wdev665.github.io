@@ -151,4 +151,5 @@ function redirect() {
 let dropdownTaskbar = document.querySelector('.taskbar');
 $('.dropdown').on('click', function () {
     $('.taskbar').toggleClass('closed opened');
+    $('.dropdown-arrow').toggleClass('closed-arrow opened-arrow')
 });

@@ -165,7 +165,7 @@ section{
     align-items: center;
     justify-content: space-around;
     font-size: 1.15em;
-    transition: 0.5s;
+    transition: background-color 0.5s ease;
 }
 .taskbar .task:first-child{
     background: darkred;
@@ -201,6 +201,7 @@ section{
 
 .dropdown-arrow{
     height: 100%;
+    transition: 0.5s;
 }
 .task:nth-child(2) .dropdown-arrow, .task:last-child .dropdown-arrow{
     opacity: 0;
@@ -223,4 +224,10 @@ img[alt='megaphone']{
 }
 .work-start:hover{
     background: green;
+}
+.closed-arrow{
+    transform: rotate(0deg);
+}
+.opened-arrow{
+    transform: rotate(-180deg);
 }
