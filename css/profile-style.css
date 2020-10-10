@@ -128,7 +128,7 @@ section{
     background: #000;
 }
 .profile-info .work-start{
-    padding: 15px 70px;
+    padding: 15px 40px;
     border: none;
     font-size: 1em;
     height: 100%;
@@ -136,6 +136,7 @@ section{
     color: white;
     border-radius: 15px;
     font-weight: lighter;
+    transition: 0.5s;
 }
 
 .profile-info .taskbar{
@@ -150,6 +151,7 @@ section{
     max-height: 200px;
     top: 0;
     left: 0;
+    transition: 1s;
 }
 
 .profile-info .taskbar .task{
@@ -159,7 +161,7 @@ section{
     text-align: center;
     background: darkgrey;
     color: white;
-    height: 65px;
+    height: 100%;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
@@ -189,7 +191,7 @@ section{
 .profile-info .taskbar.opened{
     margin: 0;
     align-self: flex-start;
-    height: 300%;
+    height: 150%;
 }
 
 
@@ -205,7 +207,7 @@ section{
     opacity: 0;
 }
 .taskbar.opened .task:first-child{
-    background: darkred;
+    background: #8b0000;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
 }
@@ -215,4 +217,11 @@ section{
 }
 .taskbar.opened .task:nth-child(2):hover, .taskbar.opened .task:last-child:hover{
     background: grey;
+}
+img[alt='megaphone']{
+    height: 100%;
+    width: 3%;
+}
+.work-start:hover{
+    background: green;
 }
