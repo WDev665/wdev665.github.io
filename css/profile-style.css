@@ -161,7 +161,7 @@ section{
     text-align: center;
     background: darkgrey;
     color: white;
-    height: 100%;
+    height: 65px;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
@@ -191,7 +191,7 @@ section{
 .profile-info .taskbar.opened{
     margin: 0;
     align-self: flex-start;
-    height: 150%;
+    height: 300%;
 }
 
 
