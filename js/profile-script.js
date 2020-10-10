@@ -153,3 +153,41 @@ $('.dropdown').on('click', function () {
     $('.taskbar').toggleClass('closed opened');
     $('.dropdown-arrow').toggleClass('closed-arrow opened-arrow')
 });
+let seconds = 0;
+let minutes = 0;
+let hours = 0;
+function timer(){
+    if(seconds<9){
+        seconds += 1;
+        document.querySelector('.seconds').innerHTML = '0' + seconds;
+    }
+    else if(seconds>=9&&seconds<59){
+        seconds += 1;
+        document.querySelector('.seconds').innerHTML = seconds;
+    }
+    else if(seconds === 59&&minutes<9){
+        seconds = 0;
+        minutes += 1;
+        document.querySelector('.minutes').innerHTML = '0' + minutes;
+    }
+    else if(seconds === 59&&minutes>=9&&minutes<59){
+        seconds = 0;
+        minutes += 1;
+        document.querySelector('.minutes').innerHTML = minutes;
+    }
+    else if(seconds === 59&&minutes === 59&&hours<9){
+        seconds = 0;
+        minutes = 0;
+        hours += 1;
+        document.querySelector('.hours').innerHTML = '0' + hours;
+    }
+    else if(seconds === 59&&minutes === 59&&hours>=9){
+        seconds = 0;
+        minutes = 0;
+        hours += 1;
+        document.querySelector('.hours').innerHTML = hours;
+    }
+}
+$('.work-start').on('click',function () {
+    setInterval(timer,1);
+});
