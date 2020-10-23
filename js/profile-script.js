@@ -1,12 +1,25 @@
+const config = {
+    apiKey: "AIzaSyCTkZMzqP_CwwqY3Y0A0DzFGhL6UuopXPY",
+    authDomain: "logbook-aa07a.firebaseapp.com",
+    databaseURL: "https://logbook-aa07a.firebaseio.com",
+    projectId: "logbook-aa07a",
+    storageBucket: "logbook-aa07a.appspot.com",
+    messagingSenderId: "958268494693",
+    appId: "1:958268494693:web:9b6549f068f1b233ac878c"
+};
+firebase.initializeApp(config);
+const database = firebase.database();
+
 function setCookie(name,value,days) {
     var expires = "";
     if (days) {
         var date = new Date();
-        date.setTime(date.getTime() + (days*24*60*60*1000));
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
         expires = "; expires=" + date.toUTCString();
     }
-    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
 }
+
 function getCookie(name) {
     var nameEQ = name + "=";
     var ca = document.cookie.split(';');
@@ -17,74 +30,53 @@ function getCookie(name) {
     }
     return null;
 }
-function eraseCookie(name) {
-    document.cookie = name+'=; Max-Age=-99999999;';
-}
 
-function checkData(){
-
-    if(getCookie('login') === null){
+async function checkData(){
+    if(getCookie('id') === null){
         console.log('noCookieData');
-        if(sessionStorage.getItem('login') !== null){
-            let userData = updateUserData(sessionStorage.getItem('login'));
+        if(sessionStorage.getItem('id') !== null){
+            let user = await getUser(sessionStorage.getItem('id'));
             console.log('someSessionStorageData');
-            return userData;
+            return user;
         }else{
             window.location.replace('index.html');
             console.log('noSessionStorageData');
         }
     }else{
-        let userData = updateUserData(getCookie('login'));
+        let user = await getUser(getCookie('id'));
         console.log('someCookieData');
-        return userData;
+        return user;
     }
-    return userData;
-}
-
-function getData() {
-    let users;
-    $.ajax({
-        url: "db/users.json",
-        dataType: 'json',
-        async: false,
-        success: function (data) {
-            $.getJSON("db/users.json", async function (json) {
-                return json.users;
-            });
-            users = data.users;
-            return users;
-        }
-    });
-    return users;
-}
-let user;
-function updateUserData(userLogin){
-    let users = getData();
-    let userData = users.find(x => x.userName === userLogin)
-    user = updateData(userData);
     return user;
 }
 
-
-
-function updateData(data){
-    let userData = data;
-    return userData;
+async function getUser(userID) {
+    return await new Promise((resolve, reject) => firebase.database().ref('users/' + userID).on('value', function (snapshot) {
+        let user = snapshot.val();
+        setTimeout(resolve(user), 1000);
+    })).then((result) => {
+        user = result;
+        return user;
+    });
 }
 
-let userData = checkData();
-
-console.log(userData);
+async function setUser(){
+    let user = await checkData();
+    return user;
+}
 /*Usage
-    for ID ===> userData.userID;
-    for login ===> userData.userName;
-    for password ===> userData.userPassword;
+    for ID ===> userData['userID'];
+    for login ===> userData['userName'];
+    for password ===> userData['userPassword'];
     for status ===> ...
     ...
   Usage*/
 
-function updateWebData(){
-    $('#user_status').text(userData.userStatus);
+async function updateWebData(){
+    let user = await setUser();
+    $('#user_status').text(user['userStatus']);
+    $('#user_group').text(user['userDepartment']);
+    /*User status*/
     if($('#user_status').text() === 'Out of service'){
         $('#user_status').css('color','red');
     }else if($('#user_status').text() === 'In work'){
@@ -93,6 +85,7 @@ function updateWebData(){
         $('#user_status').text('No data');
         $('#user_status').css('color','lightgray');
     }
+    /*User department*/
 }
 
 updateWebData();
@@ -135,11 +128,11 @@ function pageFadeIn() {
 }
 function redirect() {
 
-    if(getCookie('login') !== null){
-        setCookie('login', getCookie('login'), -1);
+    if(getCookie('id') !== null){
+        setCookie('id', getCookie('login'), -1);
     }
-    if(sessionStorage.getItem('login') !== null){
-        sessionStorage.removeItem('login')
+    if(sessionStorage.getItem('id') !== null){
+        sessionStorage.removeItem('id')
     }
 
     window.location.replace('index.html');
@@ -191,3 +184,5 @@ function timer(){
 $('.work-start').on('click',function () {
     setInterval(timer,1000);
 });
+
+/* Функціонал */

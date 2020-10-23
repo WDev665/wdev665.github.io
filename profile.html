@@ -11,64 +11,85 @@
 <body>
 
 <!-- Start page -->
-
 <div class="start-page">
     <h1 class='start-page-logo'>LogBook</h1>
 </div>
 <div class="fade">
     <div class="start-page-background"></div>
 </div>
+    <!-- Header -->
 
-<!-- Header -->
+    <section class="header">
+        <div class="status-container"><span class="status" id="user_status">On Work</span></div>
+        <h1 class="logo">LogBook</h1>
+        <div class="exit"><span class="logout">EXIT</span></div>
+    </section>
 
-<section class="header">
-    <div class="status-container"><span class="status" id="user_status">On Work</span></div>
-    <h1 class="logo">LogBook</h1>
-    <div class="exit"><span class="logout">EXIT</span></div>
-</section>
+    <!-- Work info -->
 
-<!-- Work info -->
+    <section class="profile-info">
+        <button class="work-start" id="start-work">Розпочати Роботу</button>
 
-<section class="profile-info">
-    <button class="work-start">Розпочати Роботу</button>
+        <div class="separate-line"></div>
 
-    <div class="separate-line"></div>
+        <img src="img/megaphone.png" alt="megaphone"/>
 
-    <img src="img/megaphone.png" alt="megaphone"/>
-
-    <div class="taskbar closed">
-        <div class="task">
-            <span class="ts-message">Meeting</span>
-            <span class="ts-start">17:00</span>
-            <span class="ts-creator">admin</span>
-            <span class="ts-place">Skype Conference</span>
-            <span class="dropdown"><img src="img/arrow.png" alt="arrow" class="dropdown-arrow closed-arrow"></span>
+        <div class="taskbar closed">
+            <div class="task">
+                <span class="ts-message">Meeting</span>
+                <span class="ts-start">17:00</span>
+                <span class="ts-creator">admin</span>
+                <span class="ts-place">Skype Conference</span>
+                <span class="dropdown"><img src="img/arrow.png" alt="arrow" class="dropdown-arrow closed-arrow"></span>
+            </div>
+            <div class="task">
+                <span class="ts-message">Meeting</span>
+                <span class="ts-start">17:00</span>
+                <span class="ts-creator">admin</span>
+                <span class="ts-place">Skype Conference</span>
+                <span><img src="img/arrow.png" alt="arrow" class="dropdown-arrow"></span>
+            </div>
+            <div class="task">
+                <span class="ts-message">Meeting</span>
+                <span class="ts-start">17:00</span>
+                <span class="ts-creator">admin</span>
+                <span class="ts-place">Skype Conference</span>
+                <span><img src="img/arrow.png" alt="arrow" class="dropdown-arrow"></span>
+            </div>
         </div>
-        <div class="task">
-            <span class="ts-message">Meeting</span>
-            <span class="ts-start">17:00</span>
-            <span class="ts-creator">admin</span>
-            <span class="ts-place">Skype Conference</span>
-            <span><img src="img/arrow.png" alt="arrow" class="dropdown-arrow"></span>
+
+        <div class="separate-line"></div>
+
+        <span class="work-group" id="user_group">Програмісти</span>
+
+        <div class="separate-line"></div>
+
+        <div class="work-time"><span class="hours">00</span>:<span class="minutes">00</span>:<span class="seconds">00</span></div>
+    </section>
+
+    <!-- Profile info -->
+
+    <section class="profile-stats">
+        <div class="profile-stats-top">
+            <div class="profile-icon"></div>
+            <div class="salary-info">
+                <table>
+                    <tr>
+                        <td>Ставка</td>
+                        <td>Нараховано</td>
+                        <td>Нараховано за сьогодні</td>
+                    </tr>
+                    <tr>
+                        <td>0$/час</td>
+                        <td>0$</td>
+                        <td>0$</td>
+                    </tr>
+                </table>
+            </div>
         </div>
-        <div class="task">
-            <span class="ts-message">Meeting</span>
-            <span class="ts-start">17:00</span>
-            <span class="ts-creator">admin</span>
-            <span class="ts-place">Skype Conference</span>
-            <span><img src="img/arrow.png" alt="arrow" class="dropdown-arrow"></span>
-        </div>
-    </div>
+    </section>
 
-    <div class="separate-line"></div>
-
-    <span class="work-group">Програмісти</span>
-
-    <div class="separate-line"></div>
-
-    <div class="work-time"><span class="hours">00</span>:<span class="minutes">00</span>:<span class="seconds">00</span></div>
-</section>
-
-<script src="js/profile-script.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.2.0/firebase.js"></script>
+    <script src="js/profile-script.js"></script>
 </body>
 </html>

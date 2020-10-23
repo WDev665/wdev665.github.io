@@ -218,6 +218,48 @@ section{
 .taskbar.opened .task:nth-child(2):hover, .taskbar.opened .task:last-child:hover{
     background: grey;
 }
+
+/*Profile stats*/
+
+.profile-stats{
+    width: calc(100% - 60px);
+    height: 400px;
+    background-color: #fff;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 15px;
+    box-shadow: 0 0 15px 0 rgba(99,99,99,1);
+}
+.profile-stats-top{
+    padding-left: 25px;
+    height: 200px;
+    border-bottom: 1px solid red;
+}
+.profile-icon{
+    display: inline-block;
+    margin: 10px;
+    height: 180px;
+    width: 180px;
+    box-shadow: inset 0px 0px 20px -5px rgba(0,0,0,0.75);
+    background-color: transparent;
+    background-image: url('../img/profile-icon.png');
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 25px;
+}
+.salary-info{
+    display: inline-block;
+    height: 180px;
+}
+.salary-info table{
+    border-spacing: 0;
+}
+.salary-info tr{
+}
+.salary-info td{
+    padding: 15px 30px;
+}
 img[alt='megaphone']{
     height: 100%;
     width: 3%;

@@ -42,24 +42,57 @@ setTimeout(textMovement,3000);
 setTimeout(fadeOut, 3000);
 
 /*Авторизація*/
-let users;
-let userId;
+let user;
+let userID;
 let userFounded = false;
 let userAllowed = false;
 let isButtonPressed = false;
+const config = {
+    apiKey: "AIzaSyCTkZMzqP_CwwqY3Y0A0DzFGhL6UuopXPY",
+    authDomain: "logbook-aa07a.firebaseapp.com",
+    databaseURL: "https://logbook-aa07a.firebaseio.com",
+    projectId: "logbook-aa07a",
+    storageBucket: "logbook-aa07a.appspot.com",
+    messagingSenderId: "958268494693",
+    appId: "1:958268494693:web:9b6549f068f1b233ac878c"
+};
+firebase.initializeApp(config);
+const database = firebase.database();
+
+async function getUserID(userName) {
+    return await new Promise((resolve, reject) => firebase.database().ref('ids/').on('value', function (snapshot) {
+        let ids = snapshot.val();
+        setTimeout(resolve(ids), 1000);
+    })).then((result) => {
+        ids = result;
+        console.log('User founded and his id ==> ' + ids[userName]);
+        return ids[userName];
+    });
+}
+
+async function getUser(userID) {
+    return await new Promise((resolve, reject) => firebase.database().ref('users/' + userID).on('value', function (snapshot) {
+        let user = snapshot.val();
+        setTimeout(resolve(user), 1000);
+    })).then((result) => {
+        user = result;
+        console.log('Success get method!User info: ==>\n' + user);
+        console.log('Users current status ==>' + user['userCurrentStatus']);
+        return user;
+    });
+}
+
+function checkMe(){
+    if(getCookie('id') !== null || sessionStorage.getItem('id') !== null){
+        signIn();
+    }
+}
 
 checkMe();
 
-$.getJSON("db/users.json", function(json) {
-    console.log(json);
-    users = json.users;
-});
-
-
-
-function authorizing(){
+async function authorizing(){
     if(isButtonPressed){
-        console.log('false');
+        return false;
     }else{
         isButtonPressed = true;
         $('#sign-in').attr('class','innactive');
@@ -68,23 +101,39 @@ function authorizing(){
     let login = $('input[name="login"]').val();
     let pass = $('input[name="password"]').val();
 
-    for(let i = 0; i < users.length; i++) {
-        if (users[i]['userName'] === login) {
-            userFounded = true;
-            userId = i;
+    userID = await getUserID(login);
 
-            checkPass(userId, pass);
-            return false;
-        }
+    userFounded = userID !== undefined;
+    if(userFounded){
+        user = await getUser(userID);
+        checkPass(user, pass);
     }
 
-    function checkPass(id, pass){
-        if(users[id]['userPassword'] === pass){
+    function checkPass(user, pass){
+        console.log(user);
+        console.log(pass);
+        console.log(user['userPassword']);
+        if(userFounded){
+            $('.login-status').css('background-image', 'url(img/login-icon-allowed.png)');
+            if(!Boolean(pass)){
+                if(isPassVisible){
+                    $('.password-status').css('background-image', 'url(img/pass-icon-h-denied.png)');
+                }else{
+                    $('.password-status').css('background-image', 'url(img/pass-icon-denied.png)');
+                }
+
+            }
+        }
+        if(!Boolean(pass)){
+            return false;
+        }
+
+        if(user['userPassword'] === pass){
             userAllowed = true;
             if($('input[name="remember_me"]').is(':checked')){
-                rememberMe(login, pass);
+                rememberMe(userID);
             }else{
-                rememberMeTemporarily(login, pass);
+                rememberMeTemporarily(userID);
             }
             setTimeout(exit, 500);
             setTimeout(signIn, 2200);
@@ -111,12 +160,11 @@ function authorizing(){
     if(!userFounded){
         console.log('unavailableUser!');
         $('.login-status').css('background-image', 'url(img/login-icon-denied.png)');
-        isButtonPressed = false;
-        $('#sign-in').attr('class','');
     }
+    $('#sign-in').attr('class','');
+    isButtonPressed = false;
 }
 
-/*Cookies functions*/
 function setCookie(name,value,days) {
     var expires = "";
     if (days) {
@@ -126,6 +174,7 @@ function setCookie(name,value,days) {
     }
     document.cookie = name + "=" + (value || "")  + expires + "; path=/";
 }
+
 function getCookie(name) {
     var nameEQ = name + "=";
     var ca = document.cookie.split(';');
@@ -136,29 +185,13 @@ function getCookie(name) {
     }
     return null;
 }
-function eraseCookie(name) {
-    document.cookie = name+'=; Max-Age=-99999999;';
-}
 
-function rememberMeTemporarily(log, pass){
-    let login = log;
-    let password = pass;
-
-    sessionStorage.setItem('login', login);
-}
-
-function checkMe(){
-    if(getCookie('login') !== null || sessionStorage.getItem('login') !== null){
-        signIn();
-    }
+function rememberMeTemporarily(userID){
+    sessionStorage.setItem('id', userID);
 }
 
 function rememberMe(log, pass){
-    let login = log;
-    let password = pass;
-
-    setCookie('login', login, 999);
-    console.log('yes2')
+    setCookie('id', userID, 999);
 }
 
 function signIn(){
@@ -180,5 +213,4 @@ function exit(){
     reverseTextMovement();
 }
 
-// кінець функції зворотньої анімації
  
