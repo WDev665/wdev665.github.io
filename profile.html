@@ -25,47 +25,24 @@
         <div class="exit"><span class="logout">EXIT</span></div>
     </section>
 
-    <!-- Work info -->
+    <!-- Taskbar -->
 
-    <section class="profile-info">
-        <button class="work-start" id="start-work">Розпочати Роботу</button>
-
-        <div class="separate-line"></div>
-
-        <img src="img/megaphone.png" alt="megaphone"/>
-
-        <div class="taskbar closed">
-            <div class="task">
-                <span class="ts-message">Meeting</span>
-                <span class="ts-start">17:00</span>
-                <span class="ts-creator">admin</span>
-                <span class="ts-place">Skype Conference</span>
-                <span class="dropdown"><img src="img/arrow.png" alt="arrow" class="dropdown-arrow closed-arrow"></span>
-            </div>
-            <div class="task">
-                <span class="ts-message">Meeting</span>
-                <span class="ts-start">17:00</span>
-                <span class="ts-creator">admin</span>
-                <span class="ts-place">Skype Conference</span>
-                <span><img src="img/arrow.png" alt="arrow" class="dropdown-arrow"></span>
-            </div>
-            <div class="task">
-                <span class="ts-message">Meeting</span>
-                <span class="ts-start">17:00</span>
-                <span class="ts-creator">admin</span>
-                <span class="ts-place">Skype Conference</span>
-                <span><img src="img/arrow.png" alt="arrow" class="dropdown-arrow"></span>
-            </div>
+    <section class="taskbar">
+        <div class="taskbar-section">
+            <button id="switch-work">Розпочати роботу</button>
         </div>
-
-        <div class="separate-line"></div>
-
-        <span class="work-group" id="user_group">Програмісти</span>
-
-        <div class="separate-line"></div>
-
-        <div class="work-time"><span class="hours">00</span>:<span class="minutes">00</span>:<span class="seconds">00</span></div>
+        <div class="taskbar-section meetings">
+            <span class="meetings-logo"></span>
+            <ol class="meetings-list">
+                <li id="last-meet"></li>
+            </ol>
+        </div>
+        <div class="taskbar-section group">
+            <span id="current-time">00:00:00</span>
+        </div>
     </section>
+
+
 
     <!-- Profile info -->
 
@@ -90,6 +67,7 @@
     </section>
 
     <script src="https://www.gstatic.com/firebasejs/3.2.0/firebase.js"></script>
+    <script src="js/moment-with-locales.min.js"></script>
     <script src="js/profile-script.js"></script>
 </body>
 </html>

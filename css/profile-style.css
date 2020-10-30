@@ -1,7 +1,6 @@
 body {
     padding: 0;
     margin: 0;
-    background-color: rgb(240, 240,240);
     background: url("../img/bg.png") repeat 100%;
 }
 /*Стилі лого і фона*/
@@ -42,23 +41,22 @@ body {
 
 
 section{
-    margin: 15px 30px;
-}
-/* Header */
-
-.header{
+    margin: 10px 30px;
     position: relative;
     overflow: hidden;
     width: calc(100% - 60px);
     height: 60px;
     background-color: #fff;
-    color: lightgreen;
+    color: green;
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
     border-radius: 15px;
     box-shadow: 0 0 15px 0 rgba(99,99,99,1);
 }
+/* Header */
+
 .status{
+    color: green;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -104,123 +102,97 @@ section{
 .exit:hover .logout{
     color: white;
 }
-
-/* Work info */
-
-.profile-info{
-    width: available;
-    height: 80px;
-    background-color: #fff;
-    border-radius: 15px;
-    box-shadow: 0 0 15px 0 rgba(99,99,99,1);
+/* Taskbar */
+.taskbar{
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    padding: 15px;
-    box-sizing: border-box;
-    font-size: 1em;
-    font-family: sans-serif;
 }
-.separate-line{
-    height: 100%;
-    width: 0.15%;
-    background: #000;
-}
-.profile-info .work-start{
-    padding: 15px 40px;
+.taskbar button{
+    position: relative;
+    float: left;
+    top: 10px;
+    height: 40px;
     border: none;
-    font-size: 1em;
-    height: 100%;
-    background-color: lightgreen;
-    color: white;
-    border-radius: 15px;
-    font-weight: lighter;
-    transition: 0.5s;
+    border-radius: 5px;
+    color: #fff;
+    padding: 0 10px;
+    transition: .3s;
+    background-color: green;
+    outline: none;
 }
-
-.profile-info .taskbar{
-    padding: 0;
-    margin: 0;
-    width: 40%;
-    height: 100%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    vertical-align: center;
-    max-height: 200px;
-    top: 0;
-    left: 0;
-}
-
-.profile-info .taskbar .task{
-    display: none;
-    margin: auto 0;
-    position: relative;
-    text-align: center;
-    background: darkgrey;
-    color: white;
-    height: 65px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    font-size: 1.15em;
-    transition: background-color 0.5s ease;
-}
-.taskbar .task:first-child{
-    background: darkred;
-}
-.dropdown:hover{
+.taskbar button:hover{
+    transition: .3s;
     cursor: pointer;
-    padding-right: 0;
+    background-color: darkseagreen;
 }
-
-.profile-info .taskbar.closed .task:first-child{
-    display: flex;
+.at-work-but{
+    background-color: red !important;
+}
+.at-work-but:hover{
+    background-color: indianred !important;
+}
+.taskbar-section{
+    width: 120px;
     position: relative;
-    border-radius: 15px;
-    top: 0;
-    left: 0;
+    left: 3%;
+    border-right: 2px solid rgb(240, 240, 240);
+    padding-right: 15px;
 }
-
-.profile-info .taskbar.opened .task{
+.meetings{
+    width: 77%;
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
-.profile-info .taskbar.opened{
-    margin: 0;
-    align-self: flex-start;
-    height: 300%;
+.meetings-list{
+    width: 500px;
+    border-radius: 10px;
+    height: 40px;
+    border: 1.3px solid #0071c5;
+    padding: 0;
 }
-
-
-.profile-info .taskbar .task span{
-    display: block;
-    height: 50%;
+.meetings-logo{
+    height: 40px;
+    width: 40px;
+    background-image: url('../img/speaker.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin-left: -30px;
+    margin-right: 10px;
 }
-
-.dropdown-arrow{
-    height: 100%;
-    transition: 0.5s;
+li{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
-.task:nth-child(2) .dropdown-arrow, .task:last-child .dropdown-arrow{
-    opacity: 0;
+li span{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+    padding-left: 20px;
+    color: #0071c5;
+    border-right: 1.3px solid #0071c5;
+    text-align: center;
 }
-.taskbar.opened .task:first-child{
-    background: #8b0000;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+li span:last-child{
+    border-right: none;
+    padding: 0 20px;
+    text-align: center;
 }
-.taskbar.opened .task:last-child{
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+.group{
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    color: #0071c5;
 }
-.taskbar.opened .task:nth-child(2):hover, .taskbar.opened .task:last-child:hover{
-    background: grey;
+#current-time:hover{
+    cursor: default;
 }
 
 /*Profile stats*/
-
 .profile-stats{
     width: calc(100% - 60px);
     height: 400px;
@@ -229,6 +201,7 @@ section{
     font-family: 'Montserrat', sans-serif;
     border-radius: 15px;
     box-shadow: 0 0 15px 0 rgba(99,99,99,1);
+    color: #000;
 }
 .profile-stats-top{
     padding-left: 25px;

@@ -65,27 +65,78 @@ async function setUser(){
     return user;
 }
 /*Usage
-    for ID ===> userData['userID'];
-    for login ===> userData['userName'];
-    for password ===> userData['userPassword'];
+    for ID ===> user['userID'];
+    for login ===> user['userName'];
+    for password ===> user['userPassword'];
     for status ===> ...
     ...
-  Usage*/
 
+   Meets usage
+
+   for topic ===> user['userMeets']['meetTopic'];
+   for hour ===> ...
+
+  Usage*/
 async function updateWebData(){
     let user = await setUser();
-    $('#user_status').text(user['userStatus']);
+
+    $('#user_status').text(user['userCurrentStatus']);
     $('#user_group').text(user['userDepartment']);
     /*User status*/
-    if($('#user_status').text() === 'Out of service'){
+    if($('#user_status').text() === 'Не в роботі'){
         $('#user_status').css('color','red');
-    }else if($('#user_status').text() === 'In work'){
-        $('#user_status').css('color','lightgreen');
+    }else if($('#user_status').text() === 'В роботі'){
+        $('#user_status').css('color','green');
     }else{
         $('#user_status').text('No data');
         $('#user_status').css('color','lightgray');
     }
-    /*User department*/
+
+    if($('#user_status').text() === 'Не в роботі'){
+        $('#switch-work').text('Розпочати роботу');
+        $('#switch-work').removeClass('at-work-but')
+    }else if($('#user_status').text() === 'В роботі'){
+        $('#switch-work').text('Завершити роботу');
+        $('#switch-work').addClass('at-work-but')
+    }
+    /*Meet*/
+    if(user['userMeets']['meetData'] === ''){
+        $('#last-meet').text('Немає активної зустрічі');
+        $('#last-meet').css({
+            color: 'gray',
+            textAlign: 'center',
+            paddingLeft: '30px'
+        });
+        $('.meetings-list').css({
+            borderColor: 'gray'
+        });
+        $('.meetings-logo').css({
+            backgroundImage: "url('img/speaker-n.png')"
+        })
+        isCreatedMeet = false;
+    }else{
+        $('#last-meet').text('');
+        $('#last-meet').append('<span id="date"></span><span id="time"><b id="meet-h"></b>:<b id="meet-m"></b></span><span id="place"></span><span id="topic"></span><span id="for"></span>');
+        $('#last-meet').css({
+            color: '#0071c5',
+            textAlign: 'auto',
+            paddingLeft: '0'
+        });
+        $('.meetings-list').css({
+            borderColor: '#0071c5'
+        });
+        $('.meetings-logo').css({
+            backgroundImage: "url('img/speaker.png')"
+        })
+    }
+    $('#date').text(user['userMeets']['meetData']);
+    $('#meet-h').text(user['userMeets']['meetHour']);
+    $('#meet-m').text(user['userMeets']['meetMinute']);
+    $('#place').text(user['userMeets']['meetPlace']);
+    $('#topic').text(user['userMeets']['meetTopic']);
+    $('#for').text(user['userMeets']['meetGroup'] + "'s");
+
+    setTimeout(updateWebData, 60000);
 }
 
 updateWebData();
@@ -94,15 +145,6 @@ updateWebData();
 let startPageBackground = document.querySelector('.start-page-background');
 function fadeOut(){
     startPageBackground.style.opacity = 1;
-    /*
-    (function fade() {
-        if ((startPageBackground.style.opacity -= .05) < 0) {
-            startPageBackground.style.display = "none";
-        } else {
-            requestAnimationFrame(fade);
-        }
-    })();
-    */
     $('.start-page-background').fadeOut(2000);
     $('.fade').fadeOut(2000);
     $('.start-page').fadeOut(2000);
@@ -138,51 +180,30 @@ function redirect() {
     window.location.replace('index.html');
 }
 
-
-// Work Info
-
-let dropdownTaskbar = document.querySelector('.taskbar');
-$('.dropdown').on('click', function () {
-    $('.taskbar').toggleClass('closed opened');
-    $('.dropdown-arrow').toggleClass('closed-arrow opened-arrow')
-});
-let seconds = 0;
-let minutes = 0;
-let hours = 0;
-function timer(){
-    if(seconds<9){
-        seconds += 1;
-        document.querySelector('.seconds').innerHTML = '0' + seconds;
-    }
-    else if(seconds>=9&&seconds<59){
-        seconds += 1;
-        document.querySelector('.seconds').innerHTML = seconds;
-    }
-    else if(seconds === 59&&minutes<9){
-        seconds = 0;
-        minutes += 1;
-        document.querySelector('.minutes').innerHTML = '0' + minutes;
-    }
-    else if(seconds === 59&&minutes>=9&&minutes<59){
-        seconds = 0;
-        minutes += 1;
-        document.querySelector('.minutes').innerHTML = minutes;
-    }
-    else if(seconds === 59&&minutes === 59&&hours<9){
-        seconds = 0;
-        minutes = 0;
-        hours += 1;
-        document.querySelector('.hours').innerHTML = '0' + hours;
-    }
-    else if(seconds === 59&&minutes === 59&&hours>=9){
-        seconds = 0;
-        minutes = 0;
-        hours += 1;
-        document.querySelector('.hours').innerHTML = hours;
-    }
-}
-$('.work-start').on('click',function () {
-    setInterval(timer,1000);
-});
-
 /* Функціонал */
+$('#switch-work').on('click', async function(){
+    let value;
+    if(user['userCurrentStatus'] === 'Не в роботі'){
+        value = 'В роботі';
+    }else{
+        value = 'Не в роботі';
+    }
+    let fetch = await new Promise((resolve, reject) => firebase.database().ref('users/' + user['userID']).update({
+        userCurrentStatus: value
+    }, resolve)).then(r => updateWebData());
+
+});
+
+function updateTime(){
+    let currentTime = moment().format('HH:mm:ss');
+    $('#current-time').text(currentTime);
+    setTimeout(updateTime, 1000);
+}
+updateTime();
+
+function notification(){
+    var audio = new Audio(); // Создаём новый элемент Audio
+    audio.src = 'audio/notification.mp3'; // Указываем путь к звуку "клика"
+    audio.autoplay = true; // Автоматически запускаем
+    console.log('done!');
+}
